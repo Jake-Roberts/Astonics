@@ -1,0 +1,40 @@
+/* Product Listing Page Specific Styles */
+#categories {
+    margin: 2rem;
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-list li {
+    margin: 0.5rem 0;
+}
+
+.category-list input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* Products Section */
+#products {
+    margin: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: 150px;
+    background-color: #e0e0e0;
+    margin-bottom: 1rem;
+}

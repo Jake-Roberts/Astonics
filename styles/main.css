@@ -1,0 +1,330 @@
+/* Main SCSS File */
+/* styles/utils/_variables.scss */
+/* Variables */
+/* styles/utils/_mixins.scss */
+/* styles/base/_reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* styles/base/_typography.scss */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* styles/layout/_header.scss */
+/* Header */
+header {
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(34, 69, 123);
+}
+
+.logo {
+  width: 150px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.contact-info input[type=search] {
+  padding: 0.5rem;
+}
+
+/* styles/components/_navbar.scss */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* styles/components/_footer.scss */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Hero Section */
+#hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.hero-content {
+  text-align: center;
+  margin-left: 72px;
+  justify-content: center;
+}
+
+.hero-content h2 {
+  margin: 1rem 0;
+}
+
+.hero-content button {
+  padding: 0.75rem 1.5rem;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.radiall-logo {
+  height: 181px;
+  width: 433px;
+}
+
+.airplane {
+  right: 0;
+  bottom: 0;
+  width: 1312px;
+  height: 552px;
+}
+
+/* Products Section */
+#products {
+  text-align: center;
+  padding: 2rem;
+}
+
+.product-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.product-categories .category {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.product-categories .productImage {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-search {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.product-search input {
+  padding: 0.5rem;
+}
+
+.product-search button {
+  padding: 0.5rem 1rem;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Info Section */
+#info {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f1f1f1;
+  padding: 2rem;
+}
+
+.info-box {
+  width: 30%;
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+  margin-bottom: 1rem;
+}
+
+.info-box button {
+  padding: 0.5rem 1rem;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Reviews Section */
+#reviews {
+  text-align: center;
+  padding: 2rem;
+}
+
+.reviews-carousel {
+  margin-bottom: 1rem;
+}
+
+.review-button {
+  padding: 0.5rem 1rem;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* styles/pages/_home.scss */
+/* About Page Specific Styles */
+#who-we-are {
+  text-align: center;
+  padding: 2rem;
+}
+
+#who-we-are h1 {
+  font-size: 2.5rem;
+  color: rgb(34, 69, 123);
+  margin-bottom: 1rem;
+}
+
+#who-we-are p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Services Section */
+#services {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.service {
+  text-align: center;
+  max-width: 300px;
+}
+
+.service img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.service h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Quality Section */
+#quality {
+  padding: 2rem;
+}
+
+#quality h2 {
+  font-family: Inter, sans-serif;
+  font-size: 2rem;
+  color: rgb(34, 69, 123);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#quality h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#quality p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+#quality a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+#quality a:hover {
+  text-decoration: underline;
+}
+
+/* Product Listing Page Specific Styles */
+#categories {
+  margin: 2rem;
+}
+
+.category-list {
+  list-style: none;
+}
+
+.category-list li {
+  margin: 0.5rem 0;
+}
+
+.category-list input[type=checkbox] {
+  margin-right: 0.5rem;
+}
+
+/* Products Section */
+#products {
+  margin: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.product-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  background-color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,33 @@
+/* styles/layout/_header.scss */
+/* Header */
+header {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: $header-background;
+}
+
+.logo {
+    width: 150px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info input[type="search"] {
+    padding: 0.5rem;
+}
