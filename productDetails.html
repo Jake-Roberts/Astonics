@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astonics Inc. - Product Detail</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <p>Contact Us: 435.867.5309</p>
+                </div>
+                <div class="login">
+                    <a href="#login">Login</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-nav">
+            <div class="container">
+                <img src="./assets/logo.png" alt="Astonics Inc. Logo" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="search">
+                    <input type="search" placeholder="Search...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="product-detail">
+            <div class="container">
+                <div class="product-image">
+                    <div class="carousel">
+                        <!-- Carousel content here -->
+                        <div class="carousel-item active">
+                            <img src="./assets/product1.jpg" alt="Product 1">
+                        </div>
+                        <button class="carousel-control next">></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h2>Product 1</h2>
+                    <p>Super detailed description of the product and how it works. This thing is so awesome and helpful you will never have to buy another product again.</p>
+                    <table>
+                        <tr>
+                            <th>Qty/Range</th>
+                            <th>20-49</th>
+                            <th>50-299</th>
+                            <th>300-549</th>
+                            <th>550-799</th>
+                            <th>800+</th>
+                        </tr>
+                        <tr>
+                            <td>Per Piece</td>
+                            <td>$10</td>
+                            <td>$50</td>
+                            <td>$70</td>
+                            <td>$100</td>
+                            <td>$200</td>
+                        </tr>
+                    </table>
+                    <div class="quantity">
+                        <button class="decrement">-</button>
+                        <input type="text" value="2">
+                        <button class="increment">+</button>
+                    </div>
+                    <button class="add-to-cart">Add to Cart - $250</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Astonics Inc. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

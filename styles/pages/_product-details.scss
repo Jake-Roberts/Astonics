@@ -1,0 +1,106 @@
+/* Product Detail Page Specific Styles */
+#product-detail {
+    padding: 2rem 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .product-image {
+        flex: 1;
+        .carousel {
+            position: relative;
+            .carousel-item {
+                display: none;
+                &.active {
+                    display: block;
+                }
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .carousel-control {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                border: none;
+                padding: 0.5rem;
+                cursor: pointer;
+                &.next {
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .product-info {
+        flex: 1;
+        padding-left: 2rem;
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            th,
+            td {
+                border: 1px solid #ccc;
+                padding: 0.5rem;
+                text-align: center;
+            }
+            th {
+                background-color: #f1f1f1;
+            }
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            button {
+                background-color: #0056b3;
+                color: #fff;
+                border: none;
+                padding: 0.5rem;
+                cursor: pointer;
+            }
+            input {
+                width: 50px;
+                text-align: center;
+                border: 1px solid #ccc;
+                margin: 0 0.5rem;
+            }
+        }
+
+        .add-to-cart,
+        .buy-now {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+
+        .buy-now {
+            background-color: #000;
+        }
+    }
+}
