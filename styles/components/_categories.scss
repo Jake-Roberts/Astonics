@@ -1,0 +1,56 @@
+/* Products Section */
+#categories {
+  text-align: center;
+  padding: 2rem;
+
+  .product-categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+
+    .category {
+      text-align: center;
+      margin-top: 0.5rem;
+      text-decoration: none;
+      color: $color-black;
+      border-radius: 0.5rem;
+      box-shadow: none;
+      padding: 0.5rem;
+      transition: all .1s ease-in-out;
+
+      .productImage {
+        width: 100px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      &:hover {
+        box-shadow: $box-shadow-default;
+        color: $color-primary;
+      }
+    }
+  }
+
+  .product-search {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    input {
+      padding: 0.5rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: $color-primary;
+      color: $color-white;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

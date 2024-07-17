@@ -1,15 +1,20 @@
 /* Main SCSS File */
-@import 'utils/variables';
-@import 'utils/mixins';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/base';
 @import 'base/reset';
 @import 'base/typography';
-@import 'layout/header';
-@import 'components/navbar';
-@import 'components/footer';
+
+@import 'components/categories';
 @import 'components/hero';
-@import 'components/products';
 @import 'components/info';
+@import 'components/navbar';
 @import 'components/reviews';
-@import 'pages/home';
+
+@import 'layout/header';
+@import 'layout/footer';
+
 @import 'pages/about';
+@import 'pages/home';
 @import 'pages/productlisting';
