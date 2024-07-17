@@ -25,6 +25,8 @@ ORDER: base + typography > general layout + grid > page layout > components
   font-weight: 700;
   color: #fff;
   text-decoration: none;
+  width: fit-content;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
@@ -114,10 +116,6 @@ body {
   margin: 0 0 1rem;
   text-align: left;
 }
-#hero .hero-content a {
-  width: fit-content;
-  border-radius: 0.5rem;
-}
 #hero img {
   width: 100%;
   max-width: 180rem;
@@ -162,15 +160,53 @@ body {
   padding: 1rem 0;
 }
 
-/* styles/components/_navbar.scss */
-nav ul {
+/* Navbar */
+.top-bar {
+  background-color: #e0e0e0;
+  padding: 0.5rem 0;
+}
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar .contact-info p {
+  margin: 0;
+}
+.top-bar .login a {
+  text-decoration: none;
+  color: #000;
+}
+
+.main-nav {
+  background-color: rgb(34, 69, 123);
+}
+.main-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.main-nav .logo {
+  width: 150px;
+}
+.main-nav nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
-nav ul li a {
+.main-nav nav ul li a {
   text-decoration: none;
   color: #fff;
+}
+.main-nav .search {
+  display: flex;
+  align-items: center;
+}
+.main-nav .search input[type=search] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
 }
 
 /* Reviews Section */
@@ -191,38 +227,15 @@ nav ul li a {
   cursor: pointer;
 }
 
-/* styles/layout/_header.scss */
 /* Header */
-header {
-  background-color: #f1f1f1;
-  border-bottom: 1px solid #ccc;
-}
-
-.container {
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: rgb(34, 69, 123);
 }
-
-.logo {
+header .logo {
   width: 150px;
-}
-
-.contact-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: #fff;
-}
-
-.contact-info p {
-  margin: 0;
-}
-
-.contact-info input[type=search] {
-  padding: 0.5rem;
 }
 
 /* styles/layout/_footer.scss */
@@ -359,6 +372,246 @@ footer {
   height: 150px;
   background-color: #e0e0e0;
   margin-bottom: 1rem;
+}
+
+/* Checkout Page Specific Styles */
+#checkout {
+  padding: 2rem 0;
+}
+#checkout .checkout-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#checkout .checkout-form {
+  flex: 1;
+  margin-right: 2rem;
+  margin-left: 15rem;
+  max-width: 600px;
+}
+#checkout .checkout-form h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+#checkout .checkout-form .steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+#checkout .checkout-form .steps .step {
+  font-size: 1rem;
+  color: #ccc;
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+#checkout .checkout-form .steps .step.active {
+  color: #0056b3;
+}
+#checkout .checkout-form .steps .step:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  z-index: -1;
+}
+#checkout .checkout-form .steps .step:after {
+  content: "";
+  position: absolute;
+  right: -50%;
+  bottom: -0.5rem;
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  z-index: -1;
+}
+#checkout .checkout-form .steps .step.active:after {
+  background-color: #0056b3;
+}
+#checkout .checkout-form form .form-group {
+  margin-bottom: 1rem;
+}
+#checkout .checkout-form form .form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+#checkout .checkout-form form .form-group input,
+#checkout .checkout-form form .form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+}
+#checkout .checkout-form form .form-group input[type=checkbox] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+#checkout .checkout-form form .form-group button.btn-continue {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+#checkout .order-summary {
+  margin-right: 10rem;
+  width: 300px;
+}
+#checkout .order-summary h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+#checkout .order-summary .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+#checkout .order-summary .cart-item img {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem;
+}
+#checkout .order-summary .cart-item .item-details {
+  flex: 1;
+}
+#checkout .order-summary .cart-item .item-details h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+#checkout .order-summary .cart-item .item-details p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+#checkout .order-summary .cart-item .item-details .remove {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+#checkout .order-summary input[type=text] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+#checkout .order-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+#checkout .order-summary table th,
+#checkout .order-summary table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+#checkout .order-summary table th {
+  background-color: #f1f1f1;
+}
+#checkout .order-information {
+  margin-top: 2rem;
+  margin-left: 15rem;
+}
+#checkout .order-information h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+#checkout .order-information details {
+  margin-bottom: 1rem;
+}
+#checkout .order-information details summary {
+  font-size: 1rem;
+  color: #0056b3;
+  cursor: pointer;
+}
+#checkout .order-information details p {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Contact Us Page Specific Styles */
+#contact-us {
+  padding: 2rem 0;
+}
+#contact-us .container {
+  display: flex;
+  justify-content: space-between;
+}
+#contact-us .contact-info {
+  max-width: 40%;
+  margin-left: 15rem;
+}
+#contact-us .contact-info h2 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+#contact-us .contact-info p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.5;
+}
+#contact-us .contact-info h3 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+#contact-us .contact-info a {
+  color: #0056b3;
+  text-decoration: none;
+}
+#contact-us .contact-info a:hover {
+  text-decoration: underline;
+}
+#contact-us .contact-form {
+  margin-right: 15rem;
+}
+#contact-us .contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+#contact-us .contact-form form label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+#contact-us .contact-form form input,
+#contact-us .contact-form form select,
+#contact-us .contact-form form textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem 5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#contact-us .contact-form form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

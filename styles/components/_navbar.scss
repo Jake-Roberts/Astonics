@@ -1,13 +1,48 @@
-/* styles/components/_navbar.scss */
-nav {
-    ul {
+/* Navbar */
+.top-bar {
+    background-color: #e0e0e0;
+    padding: 0.5rem 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .contact-info p {
+        margin: 0;
+    }
+    .login a {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+.main-nav {
+    background-color: rgba(34, 69, 123, 1);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+    .logo {
+        width: 150px;
+    }
+    nav ul {
         list-style: none;
         display: flex;
         gap: 1rem;
-
-        li a {
-            text-decoration: none;
-            color: $color-white;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+    .search {
+        display: flex;
+        align-items: center;
+        input[type="search"] {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
         }
     }
 }
