@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astonics Inc.</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <!-- stylesheet in shopsite -->
+    <link rel="stylesheet" type="text/css" href="[-- OUTPUT_DIRECTORY_URL --]/publish/name_of_css_file.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <img src="./assets/logo.png" alt="Astonics Inc. Logo" class="logo">
+            <a href="index.html"><img src="./assets/logo.png" alt="Astonics Inc. Logo" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#login">Login</a></li>
+                    <li><a href="/productListing.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/login">Login</a></li>
                 </ul>
             </nav>
             <div class="contact-info">
@@ -24,50 +26,49 @@
             </div>
         </div>
     </header>
-
     <main>
         <section id="hero">
             <div class="hero-content">
                 <img src="./assets/radiall-logo.png" alt="Radiall Logo" class="radiall-logo">
                 <h2>Authorized Value Added Distributor</h2>
-                <button>Explore Components</button>
+                <a href="productListing.html" class="btn">Explore Components</a>
             </div>
             <img src="./assets/Hero.png" alt="Airplane" class="airplane">
         </section>
 
-        <section id="products">
+        <section id="categories">
             <h2>Products</h2>
             <div class="product-categories">
                 
-                <div class="category">
+                <a href="productListing.html" class="category">
                     <img class="productImage" src="./assets/img1.png">
-                    <h4>Connectors</h4>
-                </div>
+                    Connectors
+                </a>
                 
-                <div class="category">
+                <a href="productListing.html" class="category">
                     <img class="productImage" src="./assets/img2.png">
-                    <h4>Optic Solutions</h4> 
-                </div>
+                    Optic Solutions
+                </a>
                 
-                <div class="category">
+                <a href="productListing.html" class="category">
                     <img class="productImage" src="./assets/img3.png">
-                    <h4>RF Coaxial Connectors</h4>
-                </div>
+                    RF Coaxial Connectors
+                </a>
                 
-                <div class="category">
+                <a href="productListing.html" class="category">
                     <img class="productImage" src="./assets/img4.png">
-                    <h4>Microwave Products</h4>
-                </div>
+                    Microwave Products
+                </a>
                 
-                <div class="category">
+                <a href="productListing.html" class="category">
                     <img class="productImage" src="./assets/img5.png">
-                    <h4>Microwave Switches</h4>
-                </div>
+                    Microwave Switches
+                </a>
                 
-                <div class="category">
+                <a href="productListing.html" class="category">
                     <img class="productImage" src="./assets/img6.png">
-                    <h4>Space Qualified Switches</h4>
-                </div>
+                    Space Qualified Switches
+                </a>
             </div>
             <div class="product-search">
                 <input type="text" placeholder="Product Name, Part Number, etc.">
@@ -78,18 +79,21 @@
         <section id="info">
             <div class="info-box">
                 <h3>Support</h3>
+                <hr />
                 <p>Have a question regarding a product or service?</p>
-                <button>Contact Support</button>
+                <a href="contact.html#support" class="btn">Contact Support</a>
             </div>
             <div class="info-box">
                 <h3>Quality</h3>
+                <hr />
                 <p>Quality information about all of our products.</p>
-                <button>More Information</button>
+                <a href="about.html" class="btn">More Information</a>
             </div>
             <div class="info-box">
                 <h3>Contact Us</h3>
+                <hr />
                 <p>Connect with us for all your component needs - big or small.</p>
-                <button>Contact Us</button>
+                <a href="contact.html" class="btn">Contact Us</a>
             </div>
         </section>
 

@@ -10,7 +10,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: $header-background;
+    background-color: $color-primary-dark;
 }
 
 .logo {
@@ -21,7 +21,7 @@ header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: #fff;
+    color: $color-white;
 }
 
 .contact-info p {
