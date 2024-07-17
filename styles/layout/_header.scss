@@ -1,12 +1,8 @@
 /* Header */
 header {
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-    }
-    .logo {
-        width: 150px;
-    }
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
