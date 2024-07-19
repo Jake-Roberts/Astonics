@@ -1,7 +1,7 @@
 /* Products Section */
-#categories {
+section#categories {
   text-align: center;
-  padding: 2rem;
+  padding: 0 2rem 2rem;
 
   .product-categories {
     display: flex;
@@ -9,10 +9,10 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin: 2rem 0;
 
     .category {
+      width: 200px;
+      height: 150px;
       text-align: center;
       margin-top: 0.5rem;
       text-decoration: none;
@@ -40,6 +40,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 2rem;
 
     input {
       padding: 0.5rem;

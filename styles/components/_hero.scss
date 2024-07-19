@@ -1,5 +1,5 @@
 /* Hero Section */
-#hero {
+section#hero {
   position: relative;
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@
 
     .radiall-logo {
       height: auto;
-      width: 80%;
+      width: 50%;
       object-fit: contain;
       z-index: 1;
     }
@@ -21,6 +21,7 @@
     h2 {
       margin: 0 0 1rem;
       text-align: left;
+      width: fit-content;
     }
   }
 
