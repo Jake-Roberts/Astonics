@@ -1,16 +1,16 @@
 /* About Page Specific Styles */
-#who-we-are {
+section#who-we-are {
     text-align: center;
     padding: 2rem;
 }
 
-#who-we-are h1 {
+section#who-we-are h1 {
     font-size: 2.5rem;
     color: rgba(34, 69, 123, 1);
     margin-bottom: 1rem;
 }
 
-#who-we-are p {
+section#who-we-are p {
     font-size: 1.2rem;
     color: #666;
     line-height: 1.5;
@@ -19,7 +19,7 @@
 }
 
 /* Services Section */
-#services {
+section#services {
     display: flex;
     justify-content: space-around;
     padding: 2rem;
@@ -50,35 +50,35 @@
 }
 
 /* Quality Section */
-#quality {
+section#quality {
     padding: 2rem;
 }
 
-#quality h2 {
+section#quality h2 {
     font-size: 2rem;
     color: rgba(34, 69, 123, 1);
     text-align: center;
     margin-bottom: 1rem;
 }
 
-#quality h3 {
+section#quality h3 {
     font-size: 1.5rem;
     color: #333;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
 }
 
-#quality p {
+section#quality p {
     font-size: 1rem;
     color: #666;
     line-height: 1.5;
 }
 
-#quality a {
+section#quality a {
     color: $color-primary;
     text-decoration: none;
 }
 
-#quality a:hover {
+section#quality a:hover {
     text-decoration: underline;
 }
