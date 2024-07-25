@@ -12,7 +12,7 @@ section#who-we-are h1 {
 
 section#who-we-are p {
     font-size: 1.2rem;
-    color: #666;
+    color: section#666;
     line-height: 1.5;
     margin: 0 auto;
     max-width: 800px;
@@ -23,7 +23,7 @@ section#services {
     display: flex;
     justify-content: space-around;
     padding: 2rem;
-    background-color: #f9f9f9;
+    background-color: section#f9f9f9;
 }
 
 .service {
@@ -31,7 +31,7 @@ section#services {
     max-width: 300px;
 }
 
-.service img {
+.service svg {
     width: 50px;
     height: 50px;
     margin-bottom: 1rem;
@@ -39,13 +39,13 @@ section#services {
 
 .service h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: section#333;
     margin-bottom: 1rem;
 }
 
 .service p {
     font-size: 1rem;
-    color: #666;
+    color: section#666;
     line-height: 1.5;
 }
 
@@ -63,14 +63,14 @@ section#quality h2 {
 
 section#quality h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: section#333;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
 }
 
 section#quality p {
     font-size: 1rem;
-    color: #666;
+    color: section#666;
     line-height: 1.5;
 }
 

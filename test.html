@@ -1,0 +1,162 @@
+#############################################
+# Responsive Design Category Page Template
+# Copyright ShopSite Inc. Design By Lauren
+#############################################
+[--DEFINE LINK_TO_PAGE--]
+[-- IF PAGE.LinkGraphic --]
+<div class="loop-link-img">
+    <a
+        class="link-img[-- IF PAGE.TextWrap "
+        On
+        " --][-- IF PAGE.Layout "
+        Right
+        alignment
+        " --]-right[-- ELSE --]-left[-- END_IF --][-- END_IF --]"
+        href="[-- OUTPUT_DIRECTORY_URL --]/[-- PAGE.FileName --]"
+        title="[-- IF PAGE.Title --][-- PAGE.Title --][-- ELSE --][-- PAGE.Name REMOVE_HTML --][-- END_IF --]"
+    >[-- PAGE.LinkGraphic --]</a>
+    <a class="link-nme" href="[-- OUTPUT_DIRECTORY_URL --]/[-- PAGE.FileName --]" title="[-- IF PAGE.Title --][-- PAGE.Title --][-- ELSE --][-- PAGE.Name REMOVE_HTML --][-- END_IF --]">[-- IF PAGE.LinkName --][-- PAGE.LinkName --][-- ELSE --][-- PAGE.Name REMOVE_HTML --][-- END_IF --]</a>[-- IF PAGE.LinkText --]
+    <span>[-- PAGE.LinkText --]</span>[-- END_IF --]
+</div>[-- ELSE --]
+<a
+    class="loop-link[-- IF PAGE.TextWrap "
+    On
+    " --]-wrap[-- END_IF --]"
+    href="[-- OUTPUT_DIRECTORY_URL --]/[-- PAGE.FileName --]"
+    title="[-- IF PAGE.Title --][-- PAGE.Title --][-- ELSE --][-- PAGE.Name REMOVE_HTML --][-- END_IF --]"
+>[-- IF PAGE.LinkName --][-- PAGE.LinkName --][-- ELSE --][-- PAGE.Name REMOVE_HTML --][-- END_IF --]</a>[-- IF PAGE.LinkText --]
+<span>[-- PAGE.LinkText --]</span>
+[-- END_IF --][-- END_IF --]
+[--END_DEFINE LINK_TO_PAGE--]
+
+[-- DEFINE PAGE --]
+[-- VAR.Type "page" --][-- VAR.Secure "no" --]
+[-- IF PAGE.LinkColumns "Two Columns" --][-- VAR.LinkColumns "link half" --][-- VAR.LinkColumnTotal "2" --]
+[-- ELSE_IF PAGE.LinkColumns "Three Columns" --][-- VAR.LinkColumns "link third" --][-- VAR.LinkColumnTotal "3" --]
+[-- ELSE_IF PAGE.LinkColumns "Four Columns" --][-- VAR.LinkColumns "link fourth" --][-- VAR.LinkColumnTotal "4" --]
+[-- ELSE_IF PAGE.LinkColumns "Five Columns" --][-- VAR.LinkColumns "link fifth" --][-- VAR.LinkColumnTotal "5" --]
+[-- ELSE --][-- VAR.LinkColumns "link single" --][-- VAR.ProductColumnTotal "1" --]
+[-- END_IF --]
+[-- IF PAGE.Columns "Two Columns" --][-- VAR.Columns "product half" --][-- VAR.ProductColumnTotal "2" --][-- VAR.CrossColumns "product half" --][-- VAR.CrossProductColumnTotal "2" --]
+[-- ELSE_IF PAGE.Columns "Three Columns" --][-- VAR.Columns "product third" --][-- VAR.ProductColumnTotal "3" --][-- VAR.CrossColumns "product third" --][-- VAR.CrossProductColumnTotal "3" --]
+[-- ELSE_IF PAGE.Columns "Four Columns" --][-- VAR.Columns "product fourth" --][-- VAR.ProductColumnTotal "4" --][-- VAR.CrossColumns "product fourth" --][-- VAR.CrossProductColumnTotal "4" --]
+[-- ELSE_IF PAGE.Columns "Five Columns" --][-- VAR.Columns "product fifth" --][-- VAR.ProductColumnTotal "5" --][-- VAR.CrossColumns "product fifth" --][-- VAR.CrossProductColumnTotal "5" --]
+[-- ELSE --][-- VAR.Columns "product single" --][-- VAR.ProductColumnTotal "1" --][-- VAR.CrossColumns "product single" --][-- VAR.CrossProductColumnTotal "1" --]
+[-- END_IF --]
+[-- VAR.DisplayBanner "no" --][-- VAR.DisplayFullBanner "no" --][-- IF PAGE.Graphic --][-- IF PAGE.DisplayGraphic --][-- VAR.DisplayBanner "yes" --][-- VAR.DisplayFullBanner "yes" --][-- ELSE_IF STORE.HeaderImage --][-- IF PAGE.DisplayPageHeader --][-- VAR.DisplayBanner "yes" --][-- END_IF --][-- END_IF --][-- ELSE_IF STORE.HeaderImage --][-- IF PAGE.DisplayPageHeader --][-- VAR.DisplayBanner "yes" --][-- END_IF --][-- END_IF --]
+[-- INCLUDE ResponsiveDesign-VARs-Doctype.sst PROCESS --][-- VAR.TF_Link PAGE.Name --]
+[-- IF PAGE.SearchProductField "checked" --][-- VAR.DisplaySearch "yes" --][-- ELSE --][-- VAR.DisplaySearch "no" --][-- END_IF --]
+[-- IF Page.GlobalCrossSell --][-- VAR.GlobalCrossSell "yes" --][-- ELSE --][-- VAR.GlobalCrossSell "no" --][-- END_IF --]
+[-- IF PAGE.MetaKeywords --]
+<meta name="keywords" content="[-- PAGE.MetaKeywords --]">
+[-- ELSE --]
+<meta name="keywords" content="[-- PAGE.Name REMOVE_HTML --]">
+[-- END_IF --]
+[-- IF PAGE.MetaDescription --]
+<meta name="description" content="[-- PAGE.MetaDescription --]">
+[-- ELSE --]
+<meta name="description" content="[-- PAGE.Name REMOVE_HTML --] - [-- STORE.Name REMOVE_HTML --]">
+[-- END_IF --]
+[-- IF PAGE.Title --]
+<title>[-- PAGE.Title --]</title>
+[-- ELSE --]
+<title>[-- PAGE.Name REMOVE_HTML --] - [-- STORE.Name REMOVE_HTML --]</title>
+[-- END_IF --]
+[-- IF PAGE.PaginatedPageNum GT 1 --]
+<link rel="canonical" href="[-- OUTPUT_DIRECTORY_URL --]/[-- PAGE.FileName --]">
+[-- END_IF --]
+[-- INCLUDE ResponsiveDesign-Head.sst PROCESS --]
+[-- SOCIAL_SHARE script --]
+</head>
+<body[--
+    IF
+    VAR.DisplayFullBanner
+    "yes"
+    --][--
+    ELSE_IF
+    PAGE.FileName
+    "index.html"
+    --][--
+    ELSE
+    --]
+    id="half-height"
+    [--
+    END_IF
+    --]
+>
+    <div id="contained">
+        [-- IF PAGE.DisplayPageHeader --][-- INCLUDE ResponsiveDesign-Header.sst PROCESS --][-- END_IF --]
+[-- IF VAR.DisplayBanner "yes" --]
+        <div id="header-img">[-- IF PAGE.Graphic --][-- IF PAGE.DisplayGraphic --][-- PAGE.Graphic ONLY_ALT_TAG --][-- ELSE_IF STORE.HeaderImage --][-- IF STORE.HeaderURL --]
+            <a href="[-- STORE.HeaderURL --]" title="[-- STORE.Name --]">[-- END_IF --][-- STORE.HeaderImage ONLY_ALT_TAG --][-- IF STORE.HeaderURL --]</a>[-- END_IF --][-- END_IF --][-- ELSE_IF STORE.HeaderImage --][-- IF STORE.HeaderURL --]
+            <a href="[-- STORE.HeaderURL --]" title="[-- STORE.Name --]">[-- END_IF --][-- STORE.HeaderImage ONLY_ALT_TAG --][-- IF STORE.HeaderURL --]</a>[-- END_IF --][-- END_IF --]
+        </div>
+        [-- END_IF --]
+[-- IF PageMenu --]
+        <nav id="nav">[-- PageMenu no_jscript --]</nav>
+        [-- END_IF --]
+[-- INCLUDE ResponsiveDesign-RightCol.sst PROCESS --]
+        <article>
+            [-- INCLUDE Carousel.sst PROCESS --]
+[-- IF PayPal_Credit_Message --]
+            <div style="padding-bottom:30px">[-- PayPal_Credit_Message Flex VeryWide --]</div>
+            [-- END_IF --]
+[-- IF PAGE.DisplayName --]
+            <h1 class="nopadtop">[-- PAGE.Name --]</h1>
+            [-- END_IF --]
+[-- IF PAGE.Text1 --]
+            <div class="text textone">[-- PAGE.Text1 --]</div>
+            [-- END_IF --]
+[-- IF PAGE.NumLinks "0" --][-- ELSE --]
+            <div
+                id="loop-links"
+                [--
+                IF
+                PAGE.DisplayColumnBorders
+                --]
+                class="borders"
+                [--
+                END_IF
+                --]
+            >[-- VAR.LinkCount "0" --][-- LOOP LINKS --][-- VAR.LinkCount INC --]
+                <div class="[-- VAR.LinkColumns --][-- IF VAR.LinkCount EQ VAR.LinkColumnTotal --] noborder[-- END_IF --]">[-- LINK ResponsiveDesign-Page.sst --]</div>[-- IF VAR.LinkColumnTotal "4" --][-- IF VAR.LinkCount "2" --]
+                <div class="mid-col-break"></div>[-- END_IF --][-- END_IF --][-- IF VAR.LinkCount EQ VAR.LinkColumnTotal --]
+                <div class="link-col-div"></div>[-- VAR.LinkCount "0" --][-- END_IF --][-- END_LOOP LINKS --]
+                <div class="clear"></div>
+            </div>
+            [-- END_IF --]
+[-- IF PAGE.Text2 --]
+            <div class="text texttwo">[-- PAGE.Text2 --]</div>
+            [-- END_IF --]
+[-- IF PAGE.NumProducts "0" --][-- ELSE --][-- PrevNext --]
+            <div
+                id="loop-products"
+                [--
+                IF
+                PAGE.DisplayColumnBorders
+                --]
+                class="borders"
+                [--
+                END_IF
+                --]
+            >[-- VAR.ProductCount "0" --][-- LOOP PRODUCTS --][-- VAR.ProductCount INC --]
+                <div class="[-- VAR.Columns --][-- IF VAR.ProductCount EQ VAR.ProductColumnTotal --] noborder[-- END_IF --]">[-- PRODUCT --]</div>[-- IF VAR.ProductColumnTotal "4" --][-- IF VAR.ProductCount "2" --]
+                <div class="mid-col-break"></div>[-- END_IF --][-- END_IF --][-- IF VAR.ProductCount EQ VAR.ProductColumnTotal --]
+                <div class="product-col-div"></div>[-- VAR.ProductCount "0" --][-- END_IF --][-- END_LOOP PRODUCTS --]
+                <div class="clear"></div>
+            </div>
+            [-- PrevNext --][-- END_IF --]
+[-- IF PAGE.Text3 --]
+            <div class="text textthree">[-- PAGE.Text3 --]</div>
+            [-- END_IF --]
+            <div id="social-share">[-- SOCIAL_SHARE tag --][-- IF TELLAFRIEND --]
+                <div id="swaf">[-- TELLAFRIEND VAR.TF_Link --]</div>[-- END_IF --]</div>
+        </article>
+        [-- INCLUDE ResponsiveDesign-LeftCol.sst PROCESS --]
+[-- IF PAGE.DisplayPageFooter --][-- INCLUDE ResponsiveDesign-Footer.sst PROCESS --][-- END_IF --]
+    </div>
+    [-- INCLUDE QuickAjaxAddToCart.sst PROCESS --]
+[-- IF PayPal_Credit_Message --][-- PAYPAL_CREDIT_MESSAGE_SCRIPT --][-- END_IF --]
+</body>
+</html>
+[-- END_DEFINE PAGE --]
