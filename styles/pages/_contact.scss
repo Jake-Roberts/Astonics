@@ -1,73 +1,78 @@
 /* Contact Us Page Specific Styles */
 section#contact-us {
-    padding: 2rem 0;
+  margin: 0;
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-    }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem auto;
 
     .contact-info {
-        max-width: 40%;
-        margin-left: 15rem;
-    }
+      max-width: 40%;
+      margin-left: 15rem;
 
-    .contact-info h2 {
+      h2 {
         font-size: 2.5rem;
         color: #222;
         margin-bottom: 1rem;
-    }
+      }
 
-    .contact-info p {
+      p {
         font-size: 1.2rem;
         color: #666;
         line-height: 1.5;
-    }
+      }
 
-    .contact-info h3 {
+      h3 {
         font-size: 1.5rem;
         color: #222;
         margin-top: 2rem;
         margin-bottom: 0.5rem;
-    }
+      }
 
-    .contact-info a {
+      a {
         color: #0056b3;
         text-decoration: none;
-    }
 
-    .contact-info a:hover {
-        text-decoration: underline;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     .contact-form {
-        margin-right: 15rem;
-        form {
-            display: flex;
-            flex-direction: column;
-            label {
-                font-size: 1rem;
-                margin-bottom: 0.5rem;
-                color: #333;
-            }
-            input,
-            select,
-            textarea {
-                
-                margin-bottom: 1rem;
-                padding: 0.5rem 5rem;
-                font-size: 1rem;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
-            button {
-                padding: 0.75rem 1.5rem;
-                background-color: #0056b3;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
+      margin-right: 15rem;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+          color: #333;
         }
+
+        input,
+        select,
+        textarea {
+
+          margin-bottom: 1rem;
+          padding: 0.5rem 5rem;
+          font-size: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+
+        button {
+          padding: 0.75rem 1.5rem;
+          background-color: #0056b3;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      }
     }
+  }
 }

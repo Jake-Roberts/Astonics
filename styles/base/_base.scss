@@ -12,3 +12,32 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
+div#cart-popup {
+  height: fit-content;
+}
+
+div.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 4rem;
+
+  .product {
+    width: fit-content;
+    margin: 0 4rem;
+
+    a {
+      width: 150px;
+
+      img {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+div.input-group {
+  display: flex;
+  flex-wrap: nowrap;
+}
