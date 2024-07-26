@@ -23,7 +23,7 @@ body {
   position: relative;
 }
 
-.btn {
+.btn-custom {
   padding: 0.5rem 1rem;
   background-color: #0056b3;
   font-weight: 700;
@@ -32,6 +32,36 @@ body {
   width: fit-content;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+div#cart-popup {
+  height: fit-content;
+}
+
+div.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 4rem;
+}
+div.products .product {
+  width: fit-content;
+  margin: 0 4rem;
+}
+div.products .product a {
+  width: 150px;
+}
+div.products .product a img {
+  width: 100%;
+  margin: 0;
+}
+
+div.input-group {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+span.cart-product-quantity {
+  gap: 1rem;
 }
 
 /* styles/base/_reset.scss */
@@ -167,7 +197,14 @@ section#info .info-box p {
 }
 
 /* Navbar */
-.top-bar {
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+header div.top-bar {
   background-color: #e0e0e0;
   padding: 0.5rem 0;
   width: 100%;
@@ -177,18 +214,25 @@ section#info .info-box p {
   align-items: center;
   padding: 0.5rem 3rem;
 }
-.top-bar .contact-info p {
+header div.top-bar .contact-info {
   margin: 0;
   font-size: 20px;
 }
-.top-bar .login a {
+header div.top-bar .user-info {
+  display: flex;
+  width: fit-content;
+  justify-content: space-evenly;
+}
+header div.top-bar .user-info .login-link {
   text-decoration: none;
   color: #000;
   margin-right: 1rem;
   font-size: 20px;
 }
-
-.main-nav {
+header div.top-bar .user-info div#h1-icons {
+  text-align: center;
+}
+header div.main-nav {
   background-color: rgb(34, 69, 123);
   display: flex;
   justify-content: space-between;
@@ -197,30 +241,23 @@ section#info .info-box p {
   max-width: 2000px;
   padding: 1rem 3rem;
 }
-.main-nav .logo {
+header div.main-nav .logo {
   width: 150px;
 }
-.main-nav nav {
+header div.main-nav nav {
   display: flex;
   gap: 1rem;
   justify-content: space-evenly;
   width: 50%;
 }
-.main-nav nav a {
+header div.main-nav nav a {
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
   color: #fff;
 }
-.main-nav .search {
-  display: flex;
-  align-items: center;
-}
-.main-nav .search input[type=search] {
-  font-size: 20px;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 4px;
+header div.main-nav div#search-area button {
+  height: 100%;
 }
 
 /* Reviews Section */
@@ -242,14 +279,6 @@ section#reviews {
 }
 
 /* Header */
-header {
-  width: 100%;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
 /* styles/layout/_footer.scss */
 footer {
   background-color: #333;
@@ -272,7 +301,7 @@ section#who-we-are h1 {
 
 section#who-we-are p {
   font-size: 1.2rem;
-  color: #666;
+  color: section #666;
   line-height: 1.5;
   margin: 0 auto;
   max-width: 800px;
@@ -283,7 +312,7 @@ section#services {
   display: flex;
   justify-content: space-around;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: section #f9f9f9;
 }
 
 .service {
@@ -291,7 +320,7 @@ section#services {
   max-width: 300px;
 }
 
-.service img {
+.service svg {
   width: 50px;
   height: 50px;
   margin-bottom: 1rem;
@@ -299,13 +328,13 @@ section#services {
 
 .service h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: section #333;
   margin-bottom: 1rem;
 }
 
 .service p {
   font-size: 1rem;
-  color: #666;
+  color: section #666;
   line-height: 1.5;
 }
 
@@ -323,14 +352,14 @@ section#quality h2 {
 
 section#quality h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: section #333;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
 
 section#quality p {
   font-size: 1rem;
-  color: #666;
+  color: section #666;
   line-height: 1.5;
 }
 
@@ -344,279 +373,64 @@ section#quality a:hover {
 }
 
 /* styles/pages/_home.scss */
-/* Product Listing Page Specific Styles */
-#categories {
-  margin: 2rem;
-}
-
-.category-list {
-  list-style: none;
-}
-
-.category-list li {
-  margin: 0.5rem 0;
-}
-
-.category-list input[type=checkbox] {
-  margin-right: 0.5rem;
-}
-
-/* Products Section */
-#products {
-  margin: 2rem;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.product-item {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  text-align: center;
-}
-
-.product-image {
-  width: 100%;
-  height: 150px;
-  background-color: #e0e0e0;
-  margin-bottom: 1rem;
-}
-
-/* Checkout Page Specific Styles */
-#checkout {
-  padding: 2rem 0;
-}
-#checkout .checkout-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-#checkout .checkout-form {
-  flex: 1;
-  margin-right: 2rem;
-  margin-left: 15rem;
-  max-width: 600px;
-}
-#checkout .checkout-form h1 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-#checkout .checkout-form .steps {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-#checkout .checkout-form .steps .step {
-  font-size: 1rem;
-  color: #ccc;
-  text-align: center;
-  flex: 1;
-  position: relative;
-}
-#checkout .checkout-form .steps .step.active {
-  color: #0056b3;
-}
-#checkout .checkout-form .steps .step:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.5rem;
-  width: 100%;
-  height: 2px;
-  background-color: #ccc;
-  z-index: -1;
-}
-#checkout .checkout-form .steps .step:after {
-  content: "";
-  position: absolute;
-  right: -50%;
-  bottom: -0.5rem;
-  width: 100%;
-  height: 2px;
-  background-color: #ccc;
-  z-index: -1;
-}
-#checkout .checkout-form .steps .step.active:after {
-  background-color: #0056b3;
-}
-#checkout .checkout-form form .form-group {
-  margin-bottom: 1rem;
-}
-#checkout .checkout-form form .form-group label {
-  display: block;
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-#checkout .checkout-form form .form-group input,
-#checkout .checkout-form form .form-group select {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  max-width: 100%;
-}
-#checkout .checkout-form form .form-group input[type=checkbox] {
-  width: auto;
-  margin-right: 0.5rem;
-}
-#checkout .checkout-form form .form-group button.btn-continue {
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-  background-color: #0056b3;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-#checkout .order-summary {
-  margin-right: 10rem;
-  width: 300px;
-}
-#checkout .order-summary h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-#checkout .order-summary .cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
-}
-#checkout .order-summary .cart-item img {
-  width: 50px;
-  height: auto;
-  margin-right: 1rem;
-}
-#checkout .order-summary .cart-item .item-details {
-  flex: 1;
-}
-#checkout .order-summary .cart-item .item-details h3 {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-#checkout .order-summary .cart-item .item-details p {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-#checkout .order-summary .cart-item .item-details .remove {
-  background-color: #ccc;
-  color: #333;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-#checkout .order-summary input[type=text] {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-#checkout .order-summary table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
-}
-#checkout .order-summary table th,
-#checkout .order-summary table td {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  text-align: left;
-}
-#checkout .order-summary table th {
-  background-color: #f1f1f1;
-}
-#checkout .order-information {
-  margin-top: 2rem;
-  margin-left: 15rem;
-}
-#checkout .order-information h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-#checkout .order-information details {
-  margin-bottom: 1rem;
-}
-#checkout .order-information details summary {
-  font-size: 1rem;
-  color: #0056b3;
-  cursor: pointer;
-}
-#checkout .order-information details p {
-  font-size: 1rem;
-  color: #666;
-  margin-top: 0.5rem;
-}
-
 /* Contact Us Page Specific Styles */
 section#contact-us {
-  padding: 2rem 0;
+  margin: 0;
 }
 section#contact-us .container {
   display: flex;
   justify-content: space-between;
+  margin: 4rem auto;
 }
-section#contact-us .contact-info {
+section#contact-us .container .contact-info {
   max-width: 40%;
   margin-left: 15rem;
 }
-section#contact-us .contact-info h2 {
+section#contact-us .container .contact-info h2 {
   font-size: 2.5rem;
   color: #222;
   margin-bottom: 1rem;
 }
-section#contact-us .contact-info p {
+section#contact-us .container .contact-info p {
   font-size: 1.2rem;
   color: #666;
   line-height: 1.5;
 }
-section#contact-us .contact-info h3 {
+section#contact-us .container .contact-info h3 {
   font-size: 1.5rem;
   color: #222;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
-section#contact-us .contact-info a {
+section#contact-us .container .contact-info a {
   color: #0056b3;
   text-decoration: none;
 }
-section#contact-us .contact-info a:hover {
+section#contact-us .container .contact-info a:hover {
   text-decoration: underline;
 }
-section#contact-us .contact-form {
+section#contact-us .container .contact-form {
   margin-right: 15rem;
 }
-section#contact-us .contact-form form {
+section#contact-us .container .contact-form form {
   display: flex;
   flex-direction: column;
 }
-section#contact-us .contact-form form label {
+section#contact-us .container .contact-form form label {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: #333;
 }
-section#contact-us .contact-form form input,
-section#contact-us .contact-form form select,
-section#contact-us .contact-form form textarea {
+section#contact-us .container .contact-form form input,
+section#contact-us .container .contact-form form select,
+section#contact-us .container .contact-form form textarea {
   margin-bottom: 1rem;
   padding: 0.5rem 5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-section#contact-us .contact-form form button {
+section#contact-us .container .contact-form form button {
   padding: 0.75rem 1.5rem;
   background-color: #0056b3;
   color: #fff;
