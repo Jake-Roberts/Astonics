@@ -24,7 +24,8 @@ div.products {
 
   .product {
     width: fit-content;
-    margin: 0 4rem;
+    margin: 0 2rem;
+    max-width: 162px;
 
     a {
       width: 150px;
