@@ -45,7 +45,8 @@ div.products {
 }
 div.products .product {
   width: fit-content;
-  margin: 0 4rem;
+  margin: 0 2rem;
+  max-width: 162px;
 }
 div.products .product a {
   width: 150px;
@@ -60,7 +61,7 @@ div.input-group {
   flex-wrap: nowrap;
 }
 
-span.cart-product-quantity {
+div.cart-product-specs {
   gap: 1rem;
 }
 
