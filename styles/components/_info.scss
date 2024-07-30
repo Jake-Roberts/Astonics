@@ -6,6 +6,14 @@ section#info {
   background-position: center;
   background-size: cover;
 
+  @include respond(tab-land) {
+    flex-wrap: wrap;
+    // background-image: none;
+    // background-color: $color-primary-light;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
   .info-box {
     width: 33.3333%;
     text-align: center;
@@ -15,6 +23,11 @@ section#info {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 20rem;
+
+    @include respond(tab-land) {
+      padding: 2rem;
+    }
 
     &:nth-child(2) {
       background-color: #1D1D1D99;

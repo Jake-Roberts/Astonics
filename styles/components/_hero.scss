@@ -8,14 +8,15 @@ section#hero {
     position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     top: 5rem;
     left: 5rem;
 
     .radiall-logo {
-      height: auto;
-      width: 50%;
+      height: 3rem;
       object-fit: contain;
       z-index: 1;
+      width: fit-content;
     }
 
     h2 {
